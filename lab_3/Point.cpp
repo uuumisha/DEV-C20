@@ -1,7 +1,7 @@
 #include "inc\Point.h"
 #include <utility>
 
-// Конструкторы
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 Point::Point() {
 	m_x = m_y = 0;
 }
@@ -17,7 +17,7 @@ Point::Point(int x, int y) {
 }
 
 
-// Операторы через методы класса
+// РћРїРµСЂР°С‚РѕСЂС‹ С‡РµСЂРµР· РјРµС‚РѕРґС‹ РєР»Р°СЃСЃР°
 Point Point::operator +(const Point &other) const {
 	Point tmp(m_x + other.m_x, m_y + other.m_y);
 	return tmp;
@@ -50,7 +50,7 @@ const Point& Point::operator +() const {
 }
 
 
-// Операторы через глобальные функции
+// РћРїРµСЂР°С‚РѕСЂС‹ С‡РµСЂРµР· РіР»РѕР±Р°Р»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё
 
 Point operator -(const Point &pt1, const Point & pt2) {
 	Point tmp(pt1.m_x - pt2.m_x, pt1.m_y - pt2.m_y);
