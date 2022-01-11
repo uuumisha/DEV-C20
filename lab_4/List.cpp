@@ -12,7 +12,7 @@ List::~List() {
 	}
 }
 
-// конструктор копирования
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 List::List(const List& other) : m_size(other.m_size) {
 	Head.pNext = &Tail;
 	Tail.pPrev = &Head;
@@ -26,7 +26,7 @@ List::List(const List& other) : m_size(other.m_size) {
 	}
 }
 
-//move конструктор копирования
+//move РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 List::List(List&& other) : m_size(other.m_size) {
 	if (other.m_size) {
 		Head.pNext = other.Head.pNext;
@@ -154,7 +154,7 @@ void List::SortByChoise() {
 	//}
 }
 
-// оператор присваивания
+// РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 List& List::operator=(const List& other) {
 	if (this != &other) {
 		Node *po, *pt;
@@ -190,7 +190,7 @@ List& List::operator=(const List& other) {
 	return *this;
 }
 
-//move  оператор присваивания
+//move  РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 List& List::operator=(List&& other) {
 
 	if (this != &other) {
@@ -217,7 +217,7 @@ std::ostream& operator<<(std::ostream& os, const List& list) {
 	return os;
 }
 
-// Записать список в файл
+// Р—Р°РїРёСЃР°С‚СЊ СЃРїРёСЃРѕРє РІ С„Р°Р№Р»
 void List::WriteList() const {
 	cout << "Enter Output File Name  - ";
 	char name[80];
@@ -228,7 +228,7 @@ void List::WriteList() const {
 	fout.close();
 }
 
-// Считать список из файла
+// РЎС‡РёС‚Р°С‚СЊ СЃРїРёСЃРѕРє РёР· С„Р°Р№Р»Р°
 void List::ReadList() {
 	cout << "Enter Input File Name  - ";
 	char name[80], str[80];
@@ -245,7 +245,7 @@ void List::ReadList() {
 		return;
 	}
 
-	// считываем размер списка
+	// СЃС‡РёС‚С‹РІР°РµРј СЂР°Р·РјРµСЂ СЃРїРёСЃРєР°
 	while (strcmp("with", str)) {
 		fin >> str;
 	}
