@@ -2,7 +2,7 @@
 #include <iostream>
 #include <algorithm>
 
-// Конструктор с параметрами
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Rect::Rect(int left, int right, int top, int bottom) {
 
 	if ((left > right) || (bottom > top)) {
@@ -20,7 +20,7 @@ Rect::Rect(int left, int right, int top, int bottom) {
 	}
 }
 
-// Конструктор без параметров
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 Rect::Rect() {
 	m_left		= 0;
 	m_right		= 0;
@@ -32,7 +32,7 @@ Rect::~Rect() {
 	std::cout << "I'm Rect Destructor.\n";
 }
 
-// Растяжение прямоугольника на 4 разные дельты
+// Р Р°СЃС‚СЏР¶РµРЅРёРµ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° РЅР° 4 СЂР°Р·РЅС‹Рµ РґРµР»СЊС‚С‹
 void Rect::InflateRect(int dleft, int dright, int dtop, int dbottom) {
 	m_left		-= dleft;
 	m_right		+= dright;
@@ -40,7 +40,7 @@ void Rect::InflateRect(int dleft, int dright, int dtop, int dbottom) {
 	m_bottom	-= dbottom;
 }
 
-// Конструктор копирования
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 Rect::Rect(const Rect &other) {
 	m_left		= other.m_left;
 	m_right		= other.m_right;
@@ -48,7 +48,7 @@ Rect::Rect(const Rect &other) {
 	m_bottom	= other.m_bottom;
 }
 
-// Растяжение прямоугольника на 2 разные дельты
+// Р Р°СЃС‚СЏР¶РµРЅРёРµ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° РЅР° 2 СЂР°Р·РЅС‹Рµ РґРµР»СЊС‚С‹
 void Rect::InflateRect(int dwidth, int dhight) {
 	m_left -= dwidth;
 	m_right += dwidth;
@@ -56,7 +56,7 @@ void Rect::InflateRect(int dwidth, int dhight) {
 	m_bottom -= dhight;
 }
 
-// Задать private переменные (вершины)
+// Р—Р°РґР°С‚СЊ private РїРµСЂРµРјРµРЅРЅС‹Рµ (РІРµСЂС€РёРЅС‹)
 void Rect::SetAll(int left, int right, int top, int bottom) {
 	if ((left > right) || (bottom > top))
 		std::cout << "SetAll: wrong parameters.\n";
@@ -68,7 +68,7 @@ void Rect::SetAll(int left, int right, int top, int bottom) {
 	}
 }
 
-// Получить private переменные (вершины)
+// РџРѕР»СѓС‡РёС‚СЊ private РїРµСЂРµРјРµРЅРЅС‹Рµ (РІРµСЂС€РёРЅС‹)
 void Rect::GetAll(int &left, int &right, int &top, int &bottom) const {
 	left = m_left;
 	right = m_right;
@@ -76,12 +76,12 @@ void Rect::GetAll(int &left, int &right, int &top, int &bottom) const {
 	bottom = m_bottom;
 }
 
-// Получить описанный прямоугольник (передача параметров по значению) (метод класса)
+// РџРѕР»СѓС‡РёС‚СЊ РѕРїРёСЃР°РЅРЅС‹Р№ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє (РїРµСЂРµРґР°С‡Р° РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕ Р·РЅР°С‡РµРЅРёСЋ) (РјРµС‚РѕРґ РєР»Р°СЃСЃР°)
 void Rect::BoundingRect(const Rect &r1, const Rect &r2) {
 	SetAll(std::min(r1.m_left, r2.m_left), std::max(r1.m_right, r2.m_right), std::max(r1.m_top, r2.m_top), std::min(r1.m_bottom, r2.m_bottom));
 }
 
-// Получить описанный прямоугольник (передача параметров по значению) (глобальная функция)
+// РџРѕР»СѓС‡РёС‚СЊ РѕРїРёСЃР°РЅРЅС‹Р№ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє (РїРµСЂРµРґР°С‡Р° РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕ Р·РЅР°С‡РµРЅРёСЋ) (РіР»РѕР±Р°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ)
 Rect BoundingRect(Rect r1, Rect r2) {
 	int left1, right1, top1, bottom1;
 	int left2, right2, top2, bottom2;
@@ -94,7 +94,7 @@ Rect BoundingRect(Rect r1, Rect r2) {
 	
 }
 
-// Получить описанный прямоугольник (передача параметров по ссылке) (глобальная функция)
+// РџРѕР»СѓС‡РёС‚СЊ РѕРїРёСЃР°РЅРЅС‹Р№ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє (РїРµСЂРµРґР°С‡Р° РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕ СЃСЃС‹Р»РєРµ) (РіР»РѕР±Р°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ)
 Rect BoundingRect2(const Rect &r1, const Rect &r2) {
 	Rect r3;
 	int left1, right1, top1, bottom1;
