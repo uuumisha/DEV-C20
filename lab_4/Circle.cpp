@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-// конструкторы
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
 Circle::Circle(int x, int y, int radius) : m_point(x, y) {
 	if (radius < 0) {
