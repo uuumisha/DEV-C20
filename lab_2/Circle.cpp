@@ -1,13 +1,13 @@
 #include "inc\Circle.h"
 #include <iostream>
 
-// Конструктор по умолчанию
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Circle::Circle() : Shape(GREEN) {
 	m_x_center = m_y_center = 0;
 	m_radius = 1;
 }
 
-// Конструктор с параметрами
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Circle::Circle(int x_center, int y_center, int radius,  COLOR c) : Shape(c) {
 	m_x_center = x_center;
 	m_y_center = y_center;
@@ -19,22 +19,22 @@ Circle::Circle(int x_center, int y_center, int radius,  COLOR c) : Shape(c) {
 		m_radius = radius;
 }
 
-// Невиртуальная функция идентификации
+// РќРµРІРёСЂС‚СѓР°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РёРґРµРЅС‚РёС„РёРєР°С†РёРё
 void Circle::WhereAmI() const {
 	std::cout << "Now I am in class Circle" << std::endl;
 }
 
-// Виртуальная функция идентификации
+// Р’РёСЂС‚СѓР°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РёРґРµРЅС‚РёС„РёРєР°С†РёРё
 void Circle::WhereAmIVirtual() const {
 	std::cout << "Now I am in class Circle" << std::endl;
 }
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 Circle::~Circle() {
 	std::cout << "Now I am in Circle's destructor!\n";
 }
 
-// Конструктор с параметром класса прямоульников
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РєР»Р°СЃСЃР° РїСЂСЏРјРѕСѓР»СЊРЅРёРєРѕРІ
 Circle::Circle(const Rect &r) : Shape(r) {
 	int left, right, top, bottom;
 	r.GetAll(left, right, top, bottom);
